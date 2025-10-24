@@ -8,6 +8,7 @@ import enterprisePlace from "@/assets/enterprise-place.jpg";
 import dukesCourt from "@/assets/dukes-court.jpg";
 import unusedSite from "@/assets/unused-site.jpg";
 import emptyBuildingParking from "@/assets/empty-building-parking.jpg";
+import asahiBuilding from "@/assets/asahi-building.jpg";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
@@ -202,11 +203,15 @@ const Index = () => {
                 <ul className="space-y-3 text-foreground">
                   <li className="flex items-start">
                     <span className="text-accent font-bold mr-3">•</span>
-                    <span>Negotiate with nearby facilities like Dukes Court for shared parking arrangements</span>
+                    <span>Negotiate with nearby facilities like Dukes Court and the Asahi Building for shared parking arrangements</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-accent font-bold mr-3">•</span>
                     <span>Convert unused building sites in the area to temporary parking facilities</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent font-bold mr-3">•</span>
+                    <span>Utilize underutilized parking at empty buildings in the vicinity</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-accent font-bold mr-3">•</span>
@@ -241,9 +246,21 @@ const Index = () => {
             <div className="space-y-6">
               <div className="rounded-lg overflow-hidden shadow-[var(--shadow-card)]">
                 <img 
+                  src={asahiBuilding} 
+                  alt="Asahi Building with underground parking" 
+                  className="w-full h-[200px] object-cover"
+                />
+                <div className="bg-card p-4 border-t border-border">
+                  <h3 className="font-semibold text-lg text-primary">Asahi Building</h3>
+                  <p className="text-sm text-muted-foreground">Underground parking facility that could accommodate residents through negotiation</p>
+                </div>
+              </div>
+
+              <div className="rounded-lg overflow-hidden shadow-[var(--shadow-card)]">
+                <img 
                   src={unusedSite} 
                   alt="Unused building site that could be converted to parking" 
-                  className="w-full h-[250px] object-cover"
+                  className="w-full h-[200px] object-cover"
                 />
                 <div className="bg-card p-4 border-t border-border">
                   <h3 className="font-semibold text-lg text-primary">Unused Building Site</h3>
@@ -255,7 +272,7 @@ const Index = () => {
                 <img 
                   src={dukesCourt} 
                   alt="Dukes Court with car park facilities" 
-                  className="w-full h-[250px] object-cover"
+                  className="w-full h-[200px] object-cover"
                 />
                 <div className="bg-card p-4 border-t border-border">
                   <h3 className="font-semibold text-lg text-primary">Dukes Court</h3>
@@ -267,7 +284,7 @@ const Index = () => {
                 <img 
                   src={emptyBuildingParking} 
                   alt="Empty building with available parking spaces" 
-                  className="w-full h-[250px] object-cover"
+                  className="w-full h-[200px] object-cover"
                 />
                 <div className="bg-card p-4 border-t border-border">
                   <h3 className="font-semibold text-lg text-primary">Underutilized Parking</h3>
