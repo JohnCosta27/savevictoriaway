@@ -110,7 +110,7 @@ const Testimonies = () => {
             <p className="text-muted-foreground">No testimonies yet. Be the first to share your story!</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {signatures.map((signature) => (
               <TestimonialCard
                 key={signature.id}
