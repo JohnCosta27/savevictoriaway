@@ -2,10 +2,48 @@ import { Button } from "@/components/ui/button";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { PetitionForm } from "@/components/PetitionForm";
 import { StatCard } from "@/components/StatCard";
-import { Home, Users, Car, AlertTriangle } from "lucide-react";
+import { Home, Users, Car, AlertTriangle, MessageSquare } from "lucide-react";
 import carparkHero from "@/assets/carpark-hero.jpg";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 const Index = () => {
+  const navigate = useNavigate();
+  const [signatureCount, setSignatureCount] = useState(0);
+
+  useEffect(() => {
+    fetchSignatureCount();
+    
+    // Set up realtime subscription for signature count
+    const channel = supabase
+      .channel('signature-count')
+      .on(
+        'postgres_changes',
+        {
+          event: 'INSERT',
+          schema: 'public',
+          table: 'petition_signatures'
+        },
+        () => {
+          setSignatureCount(prev => prev + 1);
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, []);
+
+  const fetchSignatureCount = async () => {
+    const { count } = await supabase
+      .from('petition_signatures')
+      .select('*', { count: 'exact', head: true });
+    
+    setSignatureCount(count || 0);
+  };
+
   const testimonials = [
     {
       name: "Sarah Mitchell",
@@ -116,10 +154,20 @@ const Index = () => {
           <p className="text-xl text-muted-foreground mb-12 text-center">
             Real stories from real residents affected by this decision
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {testimonials.map((testimonial, index) => (
               <TestimonialCard key={index} {...testimonial} />
             ))}
+          </div>
+          <div className="text-center">
+            <Button 
+              size="lg"
+              onClick={() => navigate('/testimonies')}
+              className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
+            >
+              <MessageSquare className="w-5 h-5" />
+              Read All {signatureCount > 0 && `${signatureCount} `}Testimonies
+            </Button>
           </div>
         </div>
       </section>
