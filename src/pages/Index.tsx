@@ -78,10 +78,10 @@ const Index = () => {
         
         <div className="relative z-10 max-w-4xl mx-auto px-6">
           <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground mb-6">
-            Victoria Way Carpark: We Need Solutions
+            Victoria Way Carpark: Woking Needs Parking Solutions
           </h1>
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8">
-            We support safety-first action, but Enterprise Place residents need communication and alternative parking solutions
+            We support safety-first action, but this area of Woking needs adequate parking and communication from the council
           </p>
           <Button 
             size="lg" 
@@ -99,7 +99,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <StatCard icon={Home} number="120+" label="Affected Households" />
             <StatCard icon={Users} number="300+" label="Residents Impacted" />
-            <StatCard icon={Car} number="10 min" label="Walk to Victoria Place" />
+            <StatCard icon={Car} number="0" label="Parking Spaces Provided" />
             <StatCard icon={AlertTriangle} number="0" label="Council Updates Since Closure" />
           </div>
         </div>
@@ -121,11 +121,11 @@ const Index = () => {
           </h2>
           <div className="prose prose-lg max-w-none text-foreground space-y-6">
             <p className="text-lg leading-relaxed">
-              However, since the closure, over 300 Enterprise Place residents have been left without communication or alternative solutions. 
+              However, since the closure, residents and workers in this area of Woking have been left without communication or parking solutions. 
               We are asking the council to address three critical issues:
             </p>
             <div className="bg-card p-8 rounded-lg shadow-[var(--shadow-card)] border border-border">
-              <h3 className="text-2xl font-semibold text-primary mb-4">What We Need:</h3>
+              <h3 className="text-2xl font-semibold text-primary mb-4">What Woking Needs:</h3>
               <ul className="space-y-3 text-foreground">
                 <li className="flex items-start">
                   <span className="text-accent font-bold mr-3">1.</span>
@@ -133,19 +133,18 @@ const Index = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="text-accent font-bold mr-3">2.</span>
-                  <span><strong>Alternative Parking:</strong> Victoria Place (10-minute walk) is the only option mentioned - no suitable alternative has been provided for residents</span>
+                  <span><strong>Parking in This Area:</strong> This part of Woking needs adequate parking facilities for residents, workers, and visitors</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-accent font-bold mr-3">3.</span>
-                  <span><strong>Recognition of Impact:</strong> Parents, elderly residents, disabled individuals, and night workers face daily hardship and safety risks</span>
+                  <span><strong>Recognition of Impact:</strong> Parents, elderly residents, disabled individuals, night workers, and local businesses face daily hardship and safety risks</span>
                 </li>
               </ul>
             </div>
             <div className="bg-muted p-6 rounded-lg border border-border mt-6">
               <p className="text-foreground font-medium">
-                <strong>Victoria Place is not a viable solution:</strong> A 10-minute walk each way adds 20 minutes to every journey, 
-                making it impossible for elderly residents, dangerous for parents with young children carrying shopping, 
-                and unsafe for night shift workers returning home late.
+                <strong>This area deserves proper parking:</strong> Without adequate parking facilities, families struggle with shopping, 
+                elderly and disabled residents face accessibility challenges, night shift workers worry about safety, and local businesses lose customers.
               </p>
             </div>
           </div>
@@ -159,7 +158,7 @@ const Index = () => {
             Hear from Your Constituents
           </h2>
           <p className="text-xl text-muted-foreground mb-12 text-center">
-            Real stories from real residents affected by this decision
+            Real stories from real Woking residents affected by this decision
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {testimonials.map((testimonial, index) => (
@@ -186,7 +185,7 @@ const Index = () => {
             Add Your Voice
           </h2>
           <p className="text-xl text-muted-foreground mb-12">
-            Sign the petition asking Woking Council to provide regular updates, proper alternative parking, and a clear plan for Enterprise Place residents
+            Sign the petition asking Woking Council to provide regular updates and adequate parking solutions for this area of Woking
           </p>
           <PetitionForm />
         </div>
@@ -199,7 +198,7 @@ const Index = () => {
             Every Signature Counts
           </h2>
           <p className="text-lg mb-8 text-primary-foreground/90">
-            Help us show Woking Council that Enterprise Place residents deserve communication, updates, and real parking solutions
+            Help us show Woking Council that this area deserves communication, updates, and adequate parking facilities
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -223,7 +222,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 px-6 bg-card border-t border-border">
         <div className="max-w-6xl mx-auto text-center text-muted-foreground">
-          <p>© 2025 Save Victoria Way Carpark Campaign | For the residents of Enterprise Place, Woking</p>
+          <p>© 2025 Save Victoria Way Carpark Campaign | For the residents and workers of Woking</p>
         </div>
       </footer>
     </div>
