@@ -205,63 +205,66 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div className="space-y-6">
-              <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-card)] border border-border">
-                <h3 className="text-xl font-semibold text-primary mb-3">Short-Term Solutions</h3>
-                <ul className="space-y-3 text-foreground">
-                  <li className="flex items-start">
-                    <span className="text-accent font-bold mr-3">•</span>
-                    <span>Negotiate with nearby facilities like Dukes Court and the Asahi Building for shared parking arrangements</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent font-bold mr-3">•</span>
-                    <span>Convert unused building sites in the area to temporary parking facilities</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent font-bold mr-3">•</span>
-                    <span>Utilize underutilized parking at empty buildings in the vicinity</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent font-bold mr-3">•</span>
-                    <span>Temporary parking permits for affected Enterprise Place residents in nearby council-owned spaces</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent font-bold mr-3">•</span>
-                    <span>Discounted rates at Victoria Place and other town centre carparks for registered residents</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-card)] border border-border">
-                <h3 className="text-xl font-semibold text-primary mb-3">Long-Term Solutions</h3>
-                <ul className="space-y-3 text-foreground">
-                  <li className="flex items-start">
-                    <span className="text-accent font-bold mr-3">1.</span>
-                    <span><strong>Provide Enterprise Place residents access to the DoubleTree Hilton underground car park</strong> - the infrastructure already exists beneath their building</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent font-bold mr-3">2.</span>
-                    <span>Repair and reopen Victoria Way Carpark with proper safety measures</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent font-bold mr-3">3.</span>
-                    <span>Build new multi-storey parking facility in this area of Woking</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent font-bold mr-3">4.</span>
-                    <span>Dedicated resident parking zones with permit systems</span>
-                  </li>
-                </ul>
-              </div>
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold text-primary mb-6">Short-Term Solutions</h3>
+            <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-card)] border border-border mb-8">
+              <ul className="space-y-3 text-foreground">
+                <li className="flex items-start">
+                  <span className="text-accent font-bold mr-3">•</span>
+                  <span>Negotiate with nearby facilities like Dukes Court and the Asahi Building for shared parking arrangements</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent font-bold mr-3">•</span>
+                  <span>Convert unused building sites in the area to temporary parking facilities</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent font-bold mr-3">•</span>
+                  <span>Utilize underutilized parking at empty buildings in the vicinity</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent font-bold mr-3">•</span>
+                  <span>Temporary parking permits for affected Enterprise Place residents in nearby council-owned spaces</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent font-bold mr-3">•</span>
+                  <span>Discounted rates at Victoria Place and other town centre carparks for registered residents</span>
+                </li>
+              </ul>
             </div>
+          </div>
 
-            <div className="space-y-6">
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold text-primary mb-6">Long-Term Solutions</h3>
+            <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-card)] border border-border mb-8">
+              <ul className="space-y-3 text-foreground">
+                <li className="flex items-start">
+                  <span className="text-accent font-bold mr-3">1.</span>
+                  <span><strong>Provide Enterprise Place residents access to the DoubleTree Hilton underground car park</strong> - the infrastructure already exists beneath their building</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent font-bold mr-3">2.</span>
+                  <span>Repair and reopen Victoria Way Carpark with proper safety measures</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent font-bold mr-3">3.</span>
+                  <span>Build new multi-storey parking facility in this area of Woking</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent font-bold mr-3">4.</span>
+                  <span>Dedicated resident parking zones with permit systems</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold text-primary mb-6">Available Parking Infrastructure</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="rounded-lg overflow-hidden shadow-[var(--shadow-card)] border-2 border-accent">
                 <img 
                   src={doubletreeHilton} 
                   alt="DoubleTree Hilton with underground parking beneath Enterprise Place" 
-                  className="w-full h-[200px] object-cover"
+                  className="w-full h-[250px] object-cover"
                 />
                 <div className="bg-accent/5 p-4 border-t-2 border-accent">
                   <h3 className="font-semibold text-lg text-primary">DoubleTree Hilton - The Ideal Solution</h3>
@@ -273,7 +276,7 @@ const Index = () => {
                 <img 
                   src={asahiBuilding} 
                   alt="Asahi Building with underground parking" 
-                  className="w-full h-[200px] object-cover"
+                  className="w-full h-[250px] object-cover"
                 />
                 <div className="bg-card p-4 border-t border-border">
                   <h3 className="font-semibold text-lg text-primary">Asahi Building</h3>
@@ -285,7 +288,7 @@ const Index = () => {
                 <img 
                   src={unusedSite} 
                   alt="Unused building site that could be converted to parking" 
-                  className="w-full h-[200px] object-cover"
+                  className="w-full h-[250px] object-cover"
                 />
                 <div className="bg-card p-4 border-t border-border">
                   <h3 className="font-semibold text-lg text-primary">Unused Building Site</h3>
@@ -297,7 +300,7 @@ const Index = () => {
                 <img 
                   src={dukesCourt} 
                   alt="Dukes Court with car park facilities" 
-                  className="w-full h-[200px] object-cover"
+                  className="w-full h-[250px] object-cover"
                 />
                 <div className="bg-card p-4 border-t border-border">
                   <h3 className="font-semibold text-lg text-primary">Dukes Court</h3>
@@ -309,7 +312,7 @@ const Index = () => {
                 <img 
                   src={emptyBuildingParking} 
                   alt="Empty building with available parking spaces" 
-                  className="w-full h-[200px] object-cover"
+                  className="w-full h-[250px] object-cover"
                 />
                 <div className="bg-card p-4 border-t border-border">
                   <h3 className="font-semibold text-lg text-primary">Underutilized Parking</h3>
