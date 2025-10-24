@@ -4,6 +4,7 @@ import { PetitionForm } from "@/components/PetitionForm";
 import { StatCard } from "@/components/StatCard";
 import { Home, Users, Car, AlertTriangle, MessageSquare } from "lucide-react";
 import carparkHero from "@/assets/carpark-hero.jpg";
+import enterprisePlace from "@/assets/enterprise-place.jpg";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
@@ -105,8 +106,41 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Problem Statement */}
+      {/* Affected Area */}
       <section className="py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-primary mb-8 text-center">
+            The Affected Area
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div className="rounded-lg overflow-hidden shadow-[var(--shadow-card)]">
+              <img 
+                src={carparkHero} 
+                alt="Victoria Way Carpark" 
+                className="w-full h-[300px] object-cover"
+              />
+              <div className="bg-card p-4 border-t border-border">
+                <h3 className="font-semibold text-lg text-primary">Victoria Way Carpark</h3>
+                <p className="text-sm text-muted-foreground">Closed due to safety concerns</p>
+              </div>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-[var(--shadow-card)]">
+              <img 
+                src={enterprisePlace} 
+                alt="Enterprise Place" 
+                className="w-full h-[300px] object-cover"
+              />
+              <div className="bg-card p-4 border-t border-border">
+                <h3 className="font-semibold text-lg text-primary">Enterprise Place</h3>
+                <p className="text-sm text-muted-foreground">Residents and workers without parking</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Problem Statement */}
+      <section className="py-16 px-6 bg-muted">
         <div className="max-w-4xl mx-auto">
           <div className="bg-secondary/10 border-l-4 border-secondary p-6 rounded-r-lg mb-8">
             <h3 className="text-xl font-semibold text-primary mb-2">We Thank the Council for Prioritising Safety</h3>
