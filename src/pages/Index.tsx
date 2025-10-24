@@ -9,6 +9,7 @@ import dukesCourt from "@/assets/dukes-court.jpg";
 import unusedSite from "@/assets/unused-site.jpg";
 import emptyBuildingParking from "@/assets/empty-building-parking.jpg";
 import asahiBuilding from "@/assets/asahi-building.jpg";
+import doubletreeHilton from "@/assets/doubletree-hilton.jpg";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
@@ -195,6 +196,14 @@ const Index = () => {
           <h2 className="text-4xl font-bold text-primary mb-8 text-center">
             Potential Solutions for Woking Residents
           </h2>
+
+          <div className="bg-accent/10 border-l-4 border-accent p-6 rounded-r-lg mb-8">
+            <h3 className="text-xl font-semibold text-primary mb-2">The Ideal Solution Already Exists</h3>
+            <p className="text-foreground">
+              The DoubleTree Hilton hotel, located directly in front of Enterprise Place, has an underground car park that runs beneath Enterprise Place itself. 
+              This existing infrastructure could provide immediate relief to residents. Why don't Enterprise Place residents have access to parking that sits directly beneath their homes?
+            </p>
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div className="space-y-6">
@@ -228,15 +237,19 @@ const Index = () => {
                 <h3 className="text-xl font-semibold text-primary mb-3">Long-Term Solutions</h3>
                 <ul className="space-y-3 text-foreground">
                   <li className="flex items-start">
-                    <span className="text-accent font-bold mr-3">•</span>
+                    <span className="text-accent font-bold mr-3">1.</span>
+                    <span><strong>Provide Enterprise Place residents access to the DoubleTree Hilton underground car park</strong> - the infrastructure already exists beneath their building</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent font-bold mr-3">2.</span>
                     <span>Repair and reopen Victoria Way Carpark with proper safety measures</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-accent font-bold mr-3">•</span>
+                    <span className="text-accent font-bold mr-3">3.</span>
                     <span>Build new multi-storey parking facility in this area of Woking</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-accent font-bold mr-3">•</span>
+                    <span className="text-accent font-bold mr-3">4.</span>
                     <span>Dedicated resident parking zones with permit systems</span>
                   </li>
                 </ul>
@@ -244,6 +257,18 @@ const Index = () => {
             </div>
 
             <div className="space-y-6">
+              <div className="rounded-lg overflow-hidden shadow-[var(--shadow-card)] border-2 border-accent">
+                <img 
+                  src={doubletreeHilton} 
+                  alt="DoubleTree Hilton with underground parking beneath Enterprise Place" 
+                  className="w-full h-[200px] object-cover"
+                />
+                <div className="bg-accent/5 p-4 border-t-2 border-accent">
+                  <h3 className="font-semibold text-lg text-primary">DoubleTree Hilton - The Ideal Solution</h3>
+                  <p className="text-sm text-foreground font-medium">Underground car park directly beneath Enterprise Place - existing infrastructure that could solve the problem immediately</p>
+                </div>
+              </div>
+
               <div className="rounded-lg overflow-hidden shadow-[var(--shadow-card)]">
                 <img 
                   src={asahiBuilding} 
