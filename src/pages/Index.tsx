@@ -74,8 +74,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center justify-center text-center overflow-hidden">
+      {/* Hero Section with Petition */}
+      <section className="relative min-h-[700px] flex items-center justify-center text-center overflow-hidden py-16">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${carparkHero})` }}
@@ -89,13 +89,17 @@ const Index = () => {
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8">
             We support safety-first action, but this area of Woking needs adequate parking and communication from the council
           </p>
-          <Button 
-            size="lg" 
-            onClick={scrollToPetition}
-            className="bg-gradient-to-r from-accent to-accent/90 hover:from-accent/90 hover:to-accent/80 text-accent-foreground text-lg px-8 py-6 shadow-[var(--shadow-elevated)] font-semibold"
-          >
-            Sign the Petition Now
-          </Button>
+          
+          <div className="bg-card/95 backdrop-blur-sm rounded-lg p-8 shadow-[var(--shadow-elevated)] mb-6">
+            <div className="mb-6">
+              <h2 className="text-3xl font-bold text-primary mb-2">Sign the Petition</h2>
+              <p className="text-lg text-muted-foreground">
+                {signatureCount > 0 && <span className="font-semibold text-accent">{signatureCount} people</span>}
+                {signatureCount > 0 ? ' have' : 'Be the first to'} signed so far
+              </p>
+            </div>
+            <PetitionForm compact />
+          </div>
         </div>
       </section>
 
@@ -359,14 +363,14 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Petition Form */}
+      {/* Additional Petition Section */}
       <section id="petition" className="py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-primary mb-4">
-            Add Your Voice
+            Add Your Story
           </h2>
           <p className="text-xl text-muted-foreground mb-12">
-            Sign the petition asking Woking Council to provide regular updates and adequate parking solutions for this area of Woking
+            Share why this matters to you and add your full testimony to the petition
           </p>
           <PetitionForm />
         </div>
