@@ -6,6 +6,7 @@ import { Home, Users, Car, AlertTriangle, MessageSquare } from "lucide-react";
 import carparkHero from "@/assets/carpark-hero.jpg";
 import enterprisePlace from "@/assets/enterprise-place.jpg";
 import dukesCourt from "@/assets/dukes-court.jpg";
+import unusedSite from "@/assets/unused-site.jpg";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
@@ -204,6 +205,10 @@ const Index = () => {
                   </li>
                   <li className="flex items-start">
                     <span className="text-accent font-bold mr-3">•</span>
+                    <span>Convert unused building sites in the area to temporary parking facilities</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent font-bold mr-3">•</span>
                     <span>Temporary parking permits for affected Enterprise Place residents in nearby council-owned spaces</span>
                   </li>
                   <li className="flex items-start">
@@ -235,9 +240,21 @@ const Index = () => {
             <div className="space-y-6">
               <div className="rounded-lg overflow-hidden shadow-[var(--shadow-card)]">
                 <img 
+                  src={unusedSite} 
+                  alt="Unused building site that could be converted to parking" 
+                  className="w-full h-[250px] object-cover"
+                />
+                <div className="bg-card p-4 border-t border-border">
+                  <h3 className="font-semibold text-lg text-primary">Unused Building Site</h3>
+                  <p className="text-sm text-muted-foreground">This nearby site has been closed for a while and could be temporarily converted to parking</p>
+                </div>
+              </div>
+
+              <div className="rounded-lg overflow-hidden shadow-[var(--shadow-card)]">
+                <img 
                   src={dukesCourt} 
                   alt="Dukes Court with car park facilities" 
-                  className="w-full h-[400px] object-cover"
+                  className="w-full h-[250px] object-cover"
                 />
                 <div className="bg-card p-4 border-t border-border">
                   <h3 className="font-semibold text-lg text-primary">Dukes Court</h3>
