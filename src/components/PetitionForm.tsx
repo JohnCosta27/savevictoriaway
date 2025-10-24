@@ -16,6 +16,7 @@ const petitionSchema = z.object({
 
 const anonymousSchema = z.object({
   email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  comment: z.string().trim().max(1000, "Comment must be less than 1000 characters").optional(),
 });
 
 interface PetitionFormProps {
@@ -37,7 +38,7 @@ export const PetitionForm = ({ compact = false }: PetitionFormProps) => {
     // Validate input based on mode
     try {
       if (isAnonymous) {
-        anonymousSchema.parse({ email: formData.email });
+        anonymousSchema.parse({ email: formData.email, comment: formData.comment });
       } else {
         petitionSchema.parse(formData);
       }
@@ -56,7 +57,7 @@ export const PetitionForm = ({ compact = false }: PetitionFormProps) => {
         .insert([{
           name: isAnonymous ? 'Anonymous' : formData.name.trim(),
           email: formData.email.trim(),
-          comment: isAnonymous ? null : (formData.comment.trim() || null),
+          comment: formData.comment.trim() || null,
         }]);
 
       if (error) throw error;
@@ -111,20 +112,18 @@ export const PetitionForm = ({ compact = false }: PetitionFormProps) => {
         />
       </div>
       
-      {!isAnonymous && !compact && (
-        <div>
-          <Textarea
-            placeholder="Why is Victoria Way Carpark important to you? (Optional)"
-            value={formData.comment}
-            onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
-            className="bg-background border-border min-h-24"
-          />
-        </div>
-      )}
+      <div>
+        <Textarea
+          placeholder="Why is Victoria Way Carpark important to you? (Optional)"
+          value={formData.comment}
+          onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
+          className="bg-background border-border min-h-24"
+        />
+      </div>
       
       {isAnonymous && (
         <p className="text-sm text-muted-foreground">
-          Your signature will be recorded as "Anonymous" with only your email for verification.
+          Your signature will be recorded as "Anonymous" with your email for verification.
         </p>
       )}
       
