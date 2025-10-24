@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://victoria-way-carpark.lovable.app/sitemap.xml
