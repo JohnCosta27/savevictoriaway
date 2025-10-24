@@ -52,18 +52,18 @@ const Index = () => {
 
   const testimonials = [
     {
-      name: "Sarah Mitchell",
-      comment: "I'm a single mother with two young children. Since losing Victoria Way Carpark, I have to park 15 minutes away and carry heavy shopping bags while holding my toddler's hand. It's unsafe and exhausting.",
-      date: "2 days ago",
+      name: "Marne Keefe",
+      comment: "My daughter & her Fiancé moved into Enterprise Place last October, they saved for a long time & one of the deciding factors on purchasing their first home was Victoria Way car park. My daughter has a degenerative back disorder & ME. Since having to park in the Peacocks car park & walk through Woking after work she has been jeered at, whistled at & narrowly avoided being kicked in the face by a youth to name just a few very upsetting situations she has been confronted with. She feels unsafe & anxious, it has become a major upset to her & her partner.",
+      date: "1 week ago",
     },
     {
-      name: "David Chen",
-      comment: "I work night shifts at the hospital. Coming home at 2am to find no parking near my flat at Enterprise Place is terrifying. I've been followed twice walking from distant parking spots.",
-      date: "5 days ago",
+      name: "John Costa",
+      comment: "I used to use Victoria Way carpark everyday. My wife would come home and park her car there as she drivers to work everyday. Now she has to walk through town centre every time she goes and comes from work. Sometimes at night. This is not safe, not is it what we signed up for when we purchased our flat in Enterprise Place.",
+      date: "1 week ago",
     },
     {
-      name: "Margaret Thompson",
-      comment: "I'm 72 and disabled. This carpark was my lifeline - now I struggle to visit my daughter at Enterprise Place. The council needs to understand what they've taken from us.",
+      name: "Rio Keefe",
+      comment: "I am a resident of Enterprise Place. I go to work early and come home late, it is not safe for me - a young woman - to be forced to walk through the town center and main roads in the dark every night to get to my home. Not to mention the toll it takes on me with my chronic illness. I have been shouted at, stared at and almost assaulted having to do this in the last seven months.",
       date: "1 week ago",
     },
   ];
