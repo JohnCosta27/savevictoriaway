@@ -3,7 +3,7 @@ import { TestimonialCard } from "@/components/TestimonialCard";
 import { PetitionForm } from "@/components/PetitionForm";
 import { StatCard } from "@/components/StatCard";
 import { Home, Users, Car, AlertTriangle, MessageSquare } from "lucide-react";
-import carparkHero from "@/assets/carpark-hero.jpg";
+import carparkHero from "@/assets/victoria-way-carpark.jpg";
 import enterprisePlace from "@/assets/enterprise-place.jpg";
 import dukesCourt from "@/assets/dukes-court.jpg";
 import unusedSite from "@/assets/unused-site.jpg";
