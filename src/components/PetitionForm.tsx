@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
@@ -72,28 +74,19 @@ export const PetitionForm = ({ compact = false }: PetitionFormProps) => {
 
   return (
     <form onSubmit={handleSubmit} className={`space-y-4 ${compact ? 'max-w-md' : 'max-w-xl'} mx-auto`}>
-      {!compact && (
-        <div className="mb-4 flex items-center gap-2">
-          <Button
-            type="button"
-            variant={isAnonymous ? "outline" : "default"}
-            size="sm"
-            onClick={() => setIsAnonymous(false)}
-            className="flex-1"
-          >
-            Full Signature
-          </Button>
-          <Button
-            type="button"
-            variant={isAnonymous ? "default" : "outline"}
-            size="sm"
-            onClick={() => setIsAnonymous(true)}
-            className="flex-1"
-          >
-            Anonymous Sign
-          </Button>
-        </div>
-      )}
+      <div className="flex items-center space-x-2 mb-4 bg-muted/50 p-3 rounded-md">
+        <Checkbox 
+          id="anonymous" 
+          checked={isAnonymous}
+          onCheckedChange={(checked) => setIsAnonymous(checked as boolean)}
+        />
+        <Label 
+          htmlFor="anonymous" 
+          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+        >
+          Sign anonymously (only email required)
+        </Label>
+      </div>
       
       {!isAnonymous && (
         <div>
