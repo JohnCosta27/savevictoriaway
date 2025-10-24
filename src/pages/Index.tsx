@@ -5,6 +5,7 @@ import { StatCard } from "@/components/StatCard";
 import { Home, Users, Car, AlertTriangle, MessageSquare } from "lucide-react";
 import carparkHero from "@/assets/carpark-hero.jpg";
 import enterprisePlace from "@/assets/enterprise-place.jpg";
+import dukesCourt from "@/assets/dukes-court.jpg";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
@@ -181,6 +182,77 @@ const Index = () => {
                 elderly and disabled residents face accessibility challenges, night shift workers worry about safety, and local businesses lose customers.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Potential Solutions */}
+      <section className="py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-primary mb-8 text-center">
+            Potential Solutions for Woking Residents
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div className="space-y-6">
+              <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-card)] border border-border">
+                <h3 className="text-xl font-semibold text-primary mb-3">Short-Term Solutions</h3>
+                <ul className="space-y-3 text-foreground">
+                  <li className="flex items-start">
+                    <span className="text-accent font-bold mr-3">•</span>
+                    <span>Negotiate with nearby facilities like Dukes Court for shared parking arrangements</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent font-bold mr-3">•</span>
+                    <span>Temporary parking permits for affected Enterprise Place residents in nearby council-owned spaces</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent font-bold mr-3">•</span>
+                    <span>Discounted rates at Victoria Place and other town centre carparks for registered residents</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-card)] border border-border">
+                <h3 className="text-xl font-semibold text-primary mb-3">Long-Term Solutions</h3>
+                <ul className="space-y-3 text-foreground">
+                  <li className="flex items-start">
+                    <span className="text-accent font-bold mr-3">•</span>
+                    <span>Repair and reopen Victoria Way Carpark with proper safety measures</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent font-bold mr-3">•</span>
+                    <span>Build new multi-storey parking facility in this area of Woking</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent font-bold mr-3">•</span>
+                    <span>Dedicated resident parking zones with permit systems</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <div className="rounded-lg overflow-hidden shadow-[var(--shadow-card)]">
+                <img 
+                  src={dukesCourt} 
+                  alt="Dukes Court with car park facilities" 
+                  className="w-full h-[400px] object-cover"
+                />
+                <div className="bg-card p-4 border-t border-border">
+                  <h3 className="font-semibold text-lg text-primary">Dukes Court</h3>
+                  <p className="text-sm text-muted-foreground">Nearby facility with parking that could be part of the solution</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-secondary/10 border-l-4 border-secondary p-6 rounded-r-lg">
+            <h3 className="text-xl font-semibold text-primary mb-2">We Need Communication</h3>
+            <p className="text-foreground">
+              The council hasn't shared any updates on remediation timelines, safety surveys, or plans for alternative parking. 
+              Regular communication would help residents plan and understand what solutions are being considered for this area.
+            </p>
           </div>
         </div>
       </section>
