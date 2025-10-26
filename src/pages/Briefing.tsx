@@ -67,6 +67,17 @@ const Briefing = () => {
           <p className="text-base text-foreground max-w-3xl mx-auto mt-3 print:text-xs print:text-black">
             Our carpark was closed, and we now have to walk through the town centre to get to our cars. This is not safe, nor sustainable. Demand action today!
           </p>
+          
+          <div className="mt-6 inline-block">
+            <div className="bg-primary/10 border-2 border-primary rounded-lg px-4 py-3 print:border-black print:bg-white">
+              <p className="text-base font-bold text-primary print:text-black mb-1">
+                Calling on Woking Borough Council
+              </p>
+              <p className="text-sm text-foreground print:text-black">
+                Take action and keep residents informed
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
