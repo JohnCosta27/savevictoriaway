@@ -4,7 +4,50 @@ import { StatCard } from "@/components/StatCard";
 
 const Briefing = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background print:bg-white">
+      <style>{`
+        @media print {
+          @page {
+            margin: 0.5cm;
+          }
+          
+          body {
+            print-color-adjust: exact;
+            -webkit-print-color-adjust: exact;
+          }
+          
+          nav {
+            display: none !important;
+          }
+          
+          section {
+            padding: 0.5rem !important;
+            margin: 0 !important;
+          }
+          
+          h1, h2, h3, p, span, div {
+            color: #000 !important;
+          }
+          
+          .stat-card {
+            background: #fff !important;
+            border: 2px solid #000 !important;
+            box-shadow: none !important;
+          }
+          
+          .stat-number {
+            color: #000 !important;
+          }
+          
+          .stat-label {
+            color: #000 !important;
+          }
+          
+          svg {
+            color: #000 !important;
+          }
+        }
+      `}</style>
       {/* Header */}
       <section className="py-12 px-6">
         <div className="max-w-4xl mx-auto text-center">
