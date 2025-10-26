@@ -142,7 +142,7 @@ const Briefing = () => {
             </p>
             <div className="bg-card p-2 rounded-lg inline-block print:shadow-none print:border print:border-black">
               <p className="text-xs text-foreground mb-1 print:text-black">Sign the petition:</p>
-              <p className="text-xl font-bold text-primary print:text-black">savevictoriawaycarpark.com</p>
+              <p className="text-xl font-bold text-primary print:text-black">savevictoriaway.com</p>
             </div>
           </div>
         </div>
@@ -151,8 +151,8 @@ const Briefing = () => {
       {/* Footer */}
       <footer className="py-4 px-6 bg-muted border-t border-border print:bg-white print-compact">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs text-muted-foreground">
-            More info: <strong className="text-foreground">savevictoriawaycarpark.com</strong>
+          <p className="text-xs text-muted-foreground print:text-black">
+            More info: <strong className="text-foreground print:text-black">savevictoriaway.com</strong>
           </p>
         </div>
       </footer>
