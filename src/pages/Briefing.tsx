@@ -57,13 +57,13 @@ const Briefing = () => {
       {/* Header */}
       <section className="py-6 px-6 print:py-2 print-compact">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-black text-primary mb-3 leading-tight print:text-3xl">
+          <h1 className="text-5xl md:text-6xl font-black text-primary mb-3 leading-tight print:text-3xl print:text-black">
             Save Victoria Way Carpark
           </h1>
-          <p className="text-xl md:text-2xl text-foreground font-semibold mb-2 print:text-base">
+          <p className="text-xl md:text-2xl text-foreground font-semibold mb-2 print:text-base print:text-black">
             Dear Enterprise Place Residents
           </p>
-          <p className="text-base text-muted-foreground max-w-3xl mx-auto mt-3 print:text-xs">
+          <p className="text-base text-foreground max-w-3xl mx-auto mt-3 print:text-xs print:text-black">
             Our carpark was closed, and we now have to walk through the town centre to get to our cars. This is not safe, nor sustainable. Demand action today!
           </p>
         </div>
@@ -84,19 +84,19 @@ const Briefing = () => {
       {/* The Situation */}
       <section className="py-6 px-6 print-compact">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-card p-3 rounded-lg border-l-4 border-primary mb-3 print:shadow-none">
-            <h3 className="text-lg font-semibold text-primary mb-2">What We Need:</h3>
-            <ul className="space-y-1 text-foreground text-sm">
+          <div className="bg-card p-3 rounded-lg border-l-4 border-primary mb-3 print:shadow-none print:border-black">
+            <h3 className="text-lg font-semibold text-primary mb-2 print:text-black">What We Need:</h3>
+            <ul className="space-y-1 text-foreground text-sm print:text-black">
               <li className="flex items-start">
-                <span className="text-accent font-bold mr-2">•</span>
+                <span className="text-primary font-bold mr-2 print:text-black">•</span>
                 <span><strong>Regular updates</strong> on safety surveys and plans</span>
               </li>
               <li className="flex items-start">
-                <span className="text-accent font-bold mr-2">•</span>
+                <span className="text-primary font-bold mr-2 print:text-black">•</span>
                 <span><strong>Parking solutions</strong> for residents</span>
               </li>
               <li className="flex items-start">
-                <span className="text-accent font-bold mr-2">•</span>
+                <span className="text-primary font-bold mr-2 print:text-black">•</span>
                 <span><strong>Recognition</strong> of safety concerns</span>
               </li>
             </ul>
@@ -107,23 +107,23 @@ const Briefing = () => {
       {/* Solutions */}
       <section className="py-6 px-6 bg-muted print:bg-white print-compact">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-card p-3 rounded-lg border border-border print:shadow-none">
-            <h3 className="text-lg font-semibold text-primary mb-2">Long-Term Solutions:</h3>
-            <ul className="space-y-1 text-foreground text-sm">
+          <div className="bg-card p-3 rounded-lg border border-border print:shadow-none print:border-black">
+            <h3 className="text-lg font-semibold text-primary mb-2 print:text-black">Long-Term Solutions:</h3>
+            <ul className="space-y-1 text-foreground text-sm print:text-black">
               <li className="flex items-start">
-                <span className="text-accent font-bold mr-2">1.</span>
+                <span className="text-primary font-bold mr-2 print:text-black">1.</span>
                 <span>Access to DoubleTree Hilton underground car park (beneath Enterprise Place)</span>
               </li>
               <li className="flex items-start">
-                <span className="text-accent font-bold mr-2">2.</span>
+                <span className="text-primary font-bold mr-2 print:text-black">2.</span>
                 <span>Repair and reopen Victoria Way Carpark</span>
               </li>
               <li className="flex items-start">
-                <span className="text-accent font-bold mr-2">3.</span>
+                <span className="text-primary font-bold mr-2 print:text-black">3.</span>
                 <span>Build new multi-storey parking facility</span>
               </li>
               <li className="flex items-start">
-                <span className="text-accent font-bold mr-2">4.</span>
+                <span className="text-primary font-bold mr-2 print:text-black">4.</span>
                 <span>Dedicated resident parking zones</span>
               </li>
             </ul>
@@ -134,14 +134,14 @@ const Briefing = () => {
       {/* Call to Action */}
       <section className="py-6 px-6 print-compact">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-primary/10 border-2 border-primary p-3 rounded-lg print:shadow-none">
-            <h2 className="text-2xl font-bold text-primary mb-2">Make Your Voice Heard</h2>
-            <p className="text-base text-foreground mb-3">
+          <div className="bg-primary/10 border-2 border-primary p-3 rounded-lg print:shadow-none print:border-black">
+            <h2 className="text-2xl font-bold text-primary mb-2 print:text-black">Make Your Voice Heard</h2>
+            <p className="text-base text-foreground mb-3 print:text-black">
               Join your fellow Enterprise Place residents
             </p>
-            <div className="bg-card p-2 rounded-lg inline-block print:shadow-none">
-              <p className="text-xs text-muted-foreground mb-1">Sign the petition:</p>
-              <p className="text-xl font-bold text-primary">savevictoriawaycarpark.com</p>
+            <div className="bg-card p-2 rounded-lg inline-block print:shadow-none print:border print:border-black">
+              <p className="text-xs text-foreground mb-1 print:text-black">Sign the petition:</p>
+              <p className="text-xl font-bold text-primary print:text-black">savevictoriawaycarpark.com</p>
             </div>
           </div>
         </div>
