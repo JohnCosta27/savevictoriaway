@@ -80,7 +80,7 @@ const Briefing = () => {
       <section className="py-12 px-6 bg-muted">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-primary mb-8 text-center uppercase">The Impact</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="impact-grid grid grid-cols-1 md:grid-cols-4 gap-6 print:grid-cols-4 print:gap-2">
             <StatCard icon={Home} number="120+" label="Households" />
             <StatCard icon={Users} number="300+" label="Residents" />
             <StatCard icon={Car} number="0" label="Parking" />
