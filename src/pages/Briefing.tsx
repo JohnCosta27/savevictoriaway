@@ -57,6 +57,16 @@ const Briefing = () => {
           .stat-grid {
             margin: 1.5rem 0 !important;
           }
+          
+          .stat-card {
+            border-color: black !important;
+          }
+          
+          .stat-card svg,
+          .stat-card .stat-number,
+          .stat-card .stat-label {
+            color: black !important;
+          }
         }
       `}</style>
       {/* Header */}
@@ -68,10 +78,10 @@ const Briefing = () => {
           <p className="text-3xl md:text-4xl text-foreground font-bold mb-4 print:text-2xl print:text-black">
             Dear Enterprise Place Residents
           </p>
-          <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto mt-4 font-semibold print:text-lg print:text-black">
+          <p className="text-2xl md:text-3xl text-foreground max-w-3xl mx-auto mt-4 font-semibold print:text-2xl print:text-black">
             Our carpark was closed. We now walk through town to reach our cars.
           </p>
-          <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto mt-2 font-bold print:text-lg print:text-black">
+          <p className="text-2xl md:text-3xl text-foreground max-w-3xl mx-auto mt-2 font-bold print:text-2xl print:text-black">
             This is not safe. This is not sustainable.
           </p>
         </div>

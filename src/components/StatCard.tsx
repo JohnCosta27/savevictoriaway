@@ -9,10 +9,10 @@ interface StatCardProps {
 
 export const StatCard = ({ icon: Icon, number, label }: StatCardProps) => {
   return (
-    <Card className="p-6 text-center bg-card shadow-[var(--shadow-card)] border-border">
+    <Card className="stat-card p-6 text-center bg-card shadow-[var(--shadow-card)] border-border">
       <Icon className="w-12 h-12 mx-auto mb-4 text-primary" />
-      <p className="text-4xl font-bold text-primary mb-2">{number}</p>
-      <p className="text-muted-foreground">{label}</p>
+      <p className="stat-number text-4xl font-bold text-primary mb-2">{number}</p>
+      <p className="stat-label text-muted-foreground">{label}</p>
     </Card>
   );
 };
