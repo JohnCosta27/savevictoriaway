@@ -11,10 +11,10 @@ const Briefing = () => {
           <h1 className="text-6xl md:text-7xl font-black text-primary mb-6 leading-tight">
             Save Victoria Way Carpark
           </h1>
-          <p className="text-4xl md:text-3xl text-foreground font-semibold mb-4">
+          <p className="text-3xl md:text-4xl text-foreground font-semibold mb-4">
             Dear Woking Residents
           </p>
-          <p className="text-2xl text-muted-foreground">
+          <p className="text-xl md:text-2xl text-muted-foreground">
             Join your neighbors in calling for parking solutions
           </p>
         </div>
