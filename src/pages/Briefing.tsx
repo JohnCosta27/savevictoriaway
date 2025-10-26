@@ -63,6 +63,9 @@ const Briefing = () => {
           <p className="text-lg md:text-xl text-foreground font-semibold mb-2 print:text-base">
             Dear Enterprise Place Residents
           </p>
+          <p className="text-sm text-muted-foreground max-w-3xl mx-auto mt-3 print:text-xs">
+            Our carpark was closed, and we now have to walk through the town centre to get to our cars. This is not safe, nor sustainable. Demand action today!
+          </p>
         </div>
       </section>
 
