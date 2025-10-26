@@ -33,14 +33,24 @@ const Briefing = () => {
             background: #fff !important;
             border: 2px solid #000 !important;
             box-shadow: none !important;
+            padding: 0.5rem !important;
+          }
+          
+          .stat-card svg {
+            width: 1.5rem !important;
+            height: 1.5rem !important;
+            margin-bottom: 0.25rem !important;
           }
           
           .stat-number {
             color: #000 !important;
+            font-size: 1.5rem !important;
+            margin-bottom: 0.25rem !important;
           }
           
           .stat-label {
             color: #000 !important;
+            font-size: 0.75rem !important;
           }
           
           svg {
