@@ -17,6 +17,10 @@ const Briefing = () => {
             -webkit-print-color-adjust: exact;
           }
           
+          nav {
+            display: none !important;
+          }
+          
           .no-print {
             display: none !important;
           }
