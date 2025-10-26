@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { Home, MessageSquare, Mail } from "lucide-react";
+import { Home, MessageSquare, Mail, FileText } from "lucide-react";
 
 export const Navbar = () => {
   const getNavClass = ({ isActive }: { isActive: boolean }) =>
@@ -23,6 +23,10 @@ export const Navbar = () => {
             <NavLink to="/" end className={getNavClass}>
               <Home size={18} />
               <span className="text-sm sm:text-base">Home</span>
+            </NavLink>
+            <NavLink to="/briefing" className={getNavClass}>
+              <FileText size={18} />
+              <span className="text-sm sm:text-base">Briefing</span>
             </NavLink>
             <NavLink to="/testimonies" className={getNavClass}>
               <MessageSquare size={18} />
