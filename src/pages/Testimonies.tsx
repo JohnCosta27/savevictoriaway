@@ -47,16 +47,16 @@ const Testimonies = () => {
 
   const fetchSignatures = async () => {
     try {
-      // Get total count from public view (emails hidden)
+      // Get total count
       const { count } = await supabase
-        .from('petition_signatures_public')
+        .from('petition_signatures')
         .select('*', { count: 'exact', head: true });
       
       setTotalCount(count || 0);
 
-      // Get signatures with comments from public view (emails hidden)
+      // Get signatures with comments
       const { data, error } = await supabase
-        .from('petition_signatures_public')
+        .from('petition_signatures')
         .select('*')
         .not('comment', 'is', null)
         .order('created_at', { ascending: false });

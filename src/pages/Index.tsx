@@ -44,7 +44,7 @@ const Index = () => {
 
   const fetchSignatureCount = async () => {
     const { count } = await supabase
-      .from('petition_signatures_public')
+      .from('petition_signatures')
       .select('*', { count: 'exact', head: true });
     
     setSignatureCount(count || 0);
