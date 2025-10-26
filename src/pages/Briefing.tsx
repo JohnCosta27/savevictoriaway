@@ -58,13 +58,13 @@ const Briefing = () => {
       {/* Header */}
       <section className="py-6 px-6 print:py-2 print-compact">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-black text-primary mb-3 leading-tight print:text-3xl print:text-black">
+          <h1 className="text-6xl md:text-7xl font-black text-primary mb-3 leading-tight print:text-3xl print:text-black">
             Save Victoria Way Carpark
           </h1>
-          <p className="text-xl md:text-2xl text-foreground font-semibold mb-2 print:text-base print:text-black">
+          <p className="text-2xl md:text-3xl text-foreground font-semibold mb-2 print:text-base print:text-black">
             Dear Enterprise Place Residents
           </p>
-          <p className="text-base text-foreground max-w-3xl mx-auto mt-3 print:text-xs print:text-black">
+          <p className="text-lg text-foreground max-w-3xl mx-auto mt-3 print:text-xs print:text-black">
             Our carpark was closed, and we now have to walk through the town centre to get to our cars. This is not safe, nor sustainable. Demand action today!
           </p>
           
