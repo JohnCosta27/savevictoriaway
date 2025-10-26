@@ -74,17 +74,6 @@ const Briefing = () => {
           <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto mt-2 font-bold print:text-lg print:text-black">
             This is not safe. This is not sustainable.
           </p>
-          
-          <div className="mt-8 inline-block">
-            <div className="bg-primary border-4 border-primary rounded-lg px-6 py-4 print:border-black print:bg-black">
-              <p className="text-2xl font-black text-primary-foreground print:text-white mb-2">
-                WOKING BOROUGH COUNCIL
-              </p>
-              <p className="text-lg text-primary-foreground print:text-white font-semibold">
-                Take Action. Keep Us Informed.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
