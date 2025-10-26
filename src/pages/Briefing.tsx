@@ -6,19 +6,16 @@ const Briefing = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <section className="relative min-h-[400px] flex items-center justify-center text-center overflow-hidden py-12">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${carparkHero})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
-        
-        <div className="relative z-10 max-w-4xl mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
-            Victoria Way Carpark Campaign Briefing
+      <section className="py-12 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-6xl md:text-7xl font-black text-primary mb-6 leading-tight">
+            Save Victoria Way Carpark
           </h1>
-          <p className="text-xl text-primary-foreground/90">
-            Quick overview of the situation and proposed solutions
+          <p className="text-2xl md:text-3xl text-foreground font-semibold mb-4">
+            Dear Enterprise Place Residents
+          </p>
+          <p className="text-lg text-muted-foreground">
+            Join your neighbors in calling for parking solutions
           </p>
         </div>
       </section>
@@ -38,17 +35,15 @@ const Briefing = () => {
       {/* The Situation */}
       <section className="py-12 px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary mb-6">The Situation</h2>
-          
           <div className="bg-secondary/10 border-l-4 border-secondary p-6 rounded-r-lg mb-6">
-            <h3 className="text-xl font-semibold text-primary mb-2">Safety First</h3>
+            <h3 className="text-xl font-semibold text-primary mb-2">Your Carpark Was Closed</h3>
             <p className="text-foreground">
-              Victoria Way Carpark was closed due to safety concerns. We support the council's decision to prioritize public safety.
+              Victoria Way Carpark was closed due to safety concerns. We support the council's decision to prioritize public safety, but Enterprise Place residents deserve parking solutions.
             </p>
           </div>
 
           <div className="bg-card p-6 rounded-lg shadow-[var(--shadow-card)] border border-border mb-6">
-            <h3 className="text-xl font-semibold text-primary mb-4">What We're Asking For:</h3>
+            <h3 className="text-xl font-semibold text-primary mb-4">What Enterprise Place Needs:</h3>
             <ul className="space-y-3 text-foreground">
               <li className="flex items-start">
                 <span className="text-accent font-bold mr-3">1.</span>
@@ -56,11 +51,11 @@ const Briefing = () => {
               </li>
               <li className="flex items-start">
                 <span className="text-accent font-bold mr-3">2.</span>
-                <span><strong>Parking Solutions:</strong> This area of Woking needs adequate parking for residents, workers, and visitors</span>
+                <span><strong>Parking Solutions:</strong> You need adequate parking for your vehicles—especially for night workers, families with children, and residents with disabilities</span>
               </li>
               <li className="flex items-start">
                 <span className="text-accent font-bold mr-3">3.</span>
-                <span><strong>Recognition of Impact:</strong> Families, elderly residents, disabled individuals, and night workers face daily hardship</span>
+                <span><strong>Recognition of Impact:</strong> Walking through town late at night isn't safe, and carrying shopping long distances isn't practical</span>
               </li>
             </ul>
           </div>
@@ -70,13 +65,13 @@ const Briefing = () => {
       {/* Proposed Solutions */}
       <section className="py-12 px-6 bg-muted">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary mb-6">Proposed Solutions</h2>
+          <h2 className="text-3xl font-bold text-primary mb-6">Solutions for You</h2>
           
           <div className="bg-accent/10 border-l-4 border-accent p-6 rounded-r-lg mb-6">
-            <h3 className="text-xl font-semibold text-primary mb-2">Immediate Solution Available</h3>
+            <h3 className="text-xl font-semibold text-primary mb-2">The Answer Is Right Beneath Your Feet</h3>
             <p className="text-foreground">
-              The DoubleTree Hilton hotel has an underground car park that runs directly beneath Enterprise Place. 
-              Providing residents access to this existing infrastructure could solve the problem immediately.
+              The DoubleTree Hilton hotel has an underground car park that runs directly beneath Enterprise Place—beneath YOUR building. 
+              Why don't you have access to parking that sits directly under your homes?
             </p>
           </div>
 
@@ -130,13 +125,13 @@ const Briefing = () => {
       <section className="py-12 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-primary/10 border-2 border-primary p-8 rounded-lg">
-            <h2 className="text-3xl font-bold text-primary mb-4">Support the Campaign</h2>
+            <h2 className="text-4xl font-bold text-primary mb-4">Make Your Voice Heard</h2>
             <p className="text-lg text-foreground mb-6">
-              Join hundreds of residents in calling for parking solutions and regular communication from the council.
+              Join your fellow Enterprise Place residents and hundreds of others in demanding parking solutions.
             </p>
             <div className="bg-card p-4 rounded-lg inline-block">
-              <p className="text-sm text-muted-foreground mb-1">Learn more and sign the petition:</p>
-              <p className="text-xl font-bold text-primary">savevictoriawaycarpark.com</p>
+              <p className="text-sm text-muted-foreground mb-1">Sign the petition and learn more:</p>
+              <p className="text-2xl font-bold text-primary">savevictoriawaycarpark.com</p>
             </div>
           </div>
         </div>
@@ -146,7 +141,7 @@ const Briefing = () => {
       <footer className="py-8 px-6 bg-muted border-t border-border">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm text-muted-foreground">
-            Campaign Briefing - For more information visit <strong className="text-foreground">savevictoriawaycarpark.com</strong>
+            For more information visit <strong className="text-foreground">savevictoriawaycarpark.com</strong>
           </p>
         </div>
       </footer>
