@@ -9,7 +9,7 @@ const Briefing = () => {
         @media print {
           @page {
             size: A4;
-            margin: 1.5cm;
+            margin: 1cm;
           }
           
           body {
@@ -26,78 +26,75 @@ const Briefing = () => {
           }
           
           .print-compact {
-            padding: 0.5rem !important;
-            margin-bottom: 1rem !important;
-          }
-          
-          h1 {
-            font-size: 2.5rem !important;
+            padding: 0.25rem !important;
             margin-bottom: 0.5rem !important;
           }
           
+          h1 {
+            font-size: 2rem !important;
+            margin-bottom: 0.25rem !important;
+          }
+          
           h2 {
-            font-size: 1.5rem !important;
-            margin-bottom: 0.75rem !important;
+            font-size: 1.25rem !important;
+            margin-bottom: 0.5rem !important;
           }
           
           h3 {
-            font-size: 1.125rem !important;
+            font-size: 1rem !important;
           }
           
           section {
             page-break-inside: avoid;
-            padding: 0.75rem 0 !important;
+            padding: 0.5rem 0 !important;
           }
           
           .stat-grid {
-            margin: 1rem 0 !important;
+            margin: 0.5rem 0 !important;
           }
         }
       `}</style>
       {/* Header */}
-      <section className="py-8 px-6 print:py-4 print-compact">
+      <section className="py-6 px-6 print:py-2 print-compact">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-black text-primary mb-4 leading-tight print:text-4xl">
+          <h1 className="text-4xl md:text-5xl font-black text-primary mb-3 leading-tight print:text-3xl">
             Save Victoria Way Carpark
           </h1>
-          <p className="text-xl md:text-2xl text-foreground font-semibold mb-2 print:text-lg">
+          <p className="text-lg md:text-xl text-foreground font-semibold mb-2 print:text-base">
             Dear Enterprise Place Residents
-          </p>
-          <p className="text-base text-muted-foreground print:text-sm">
-            Join your neighbors in calling for parking solutions
           </p>
         </div>
       </section>
 
       {/* Impact Stats */}
-      <section className="py-8 px-6 bg-muted print:bg-white print-compact stat-grid">
+      <section className="py-6 px-6 bg-muted print:bg-white print-compact stat-grid">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 print:gap-3">
-            <StatCard icon={Home} number="120+" label="Affected Households" />
-            <StatCard icon={Users} number="300+" label="Residents Impacted" />
-            <StatCard icon={Car} number="0" label="Parking Spaces Provided" />
-            <StatCard icon={AlertTriangle} number="0" label="Council Updates" />
+          <div className="grid grid-cols-4 gap-2 print:gap-2">
+            <StatCard icon={Home} number="120+" label="Households" />
+            <StatCard icon={Users} number="300+" label="Residents" />
+            <StatCard icon={Car} number="0" label="Parking" />
+            <StatCard icon={AlertTriangle} number="0" label="Updates" />
           </div>
         </div>
       </section>
 
       {/* The Situation */}
-      <section className="py-8 px-6 print-compact">
+      <section className="py-6 px-6 print-compact">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-card p-4 rounded-lg border-l-4 border-primary mb-4 print:shadow-none">
-            <h3 className="text-lg font-semibold text-primary mb-2">What We Need:</h3>
-            <ul className="space-y-2 text-foreground text-sm">
+          <div className="bg-card p-3 rounded-lg border-l-4 border-primary mb-3 print:shadow-none">
+            <h3 className="text-base font-semibold text-primary mb-2">What We Need:</h3>
+            <ul className="space-y-1 text-foreground text-xs">
               <li className="flex items-start">
                 <span className="text-accent font-bold mr-2">•</span>
-                <span><strong>Regular updates</strong> on safety surveys and remediation progress</span>
+                <span><strong>Regular updates</strong> on safety surveys and plans</span>
               </li>
               <li className="flex items-start">
                 <span className="text-accent font-bold mr-2">•</span>
-                <span><strong>Parking solutions</strong> for night workers, families, and residents with disabilities</span>
+                <span><strong>Parking solutions</strong> for residents</span>
               </li>
               <li className="flex items-start">
                 <span className="text-accent font-bold mr-2">•</span>
-                <span><strong>Recognition</strong> that walking through town late at night isn't safe</span>
+                <span><strong>Recognition</strong> of safety concerns</span>
               </li>
             </ul>
           </div>
@@ -105,21 +102,14 @@ const Briefing = () => {
       </section>
 
       {/* Solutions */}
-      <section className="py-8 px-6 bg-muted print:bg-white print-compact">
+      <section className="py-6 px-6 bg-muted print:bg-white print-compact">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-accent/10 border-l-4 border-accent p-4 rounded-r-lg mb-4 print:shadow-none">
-            <h3 className="text-lg font-semibold text-primary mb-2">The Answer Is Beneath Your Building</h3>
-            <p className="text-foreground text-sm">
-              The DoubleTree Hilton has an underground car park running directly beneath Enterprise Place. Why don't you have access to parking under your own homes?
-            </p>
-          </div>
-
-          <div className="bg-card p-4 rounded-lg border border-border print:shadow-none">
-            <h3 className="text-base font-semibold text-primary mb-3">Long-Term Solutions:</h3>
-            <ul className="space-y-2 text-foreground text-sm">
+          <div className="bg-card p-3 rounded-lg border border-border print:shadow-none">
+            <h3 className="text-base font-semibold text-primary mb-2">Long-Term Solutions:</h3>
+            <ul className="space-y-1 text-foreground text-xs">
               <li className="flex items-start">
                 <span className="text-accent font-bold mr-2">1.</span>
-                <span>Access to DoubleTree Hilton underground car park</span>
+                <span>Access to DoubleTree Hilton underground car park (beneath Enterprise Place)</span>
               </li>
               <li className="flex items-start">
                 <span className="text-accent font-bold mr-2">2.</span>
@@ -139,16 +129,16 @@ const Briefing = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-8 px-6 print-compact">
+      <section className="py-6 px-6 print-compact">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-primary/10 border-2 border-primary p-4 rounded-lg print:shadow-none">
-            <h2 className="text-2xl font-bold text-primary mb-3">Make Your Voice Heard</h2>
-            <p className="text-base text-foreground mb-4">
-              Join your fellow Enterprise Place residents in demanding parking solutions.
+          <div className="bg-primary/10 border-2 border-primary p-3 rounded-lg print:shadow-none">
+            <h2 className="text-xl font-bold text-primary mb-2">Make Your Voice Heard</h2>
+            <p className="text-sm text-foreground mb-3">
+              Join your fellow Enterprise Place residents
             </p>
-            <div className="bg-card p-3 rounded-lg inline-block print:shadow-none">
+            <div className="bg-card p-2 rounded-lg inline-block print:shadow-none">
               <p className="text-xs text-muted-foreground mb-1">Sign the petition:</p>
-              <p className="text-xl font-bold text-primary">savevictoriawaycarpark.com</p>
+              <p className="text-lg font-bold text-primary">savevictoriawaycarpark.com</p>
             </div>
           </div>
         </div>
