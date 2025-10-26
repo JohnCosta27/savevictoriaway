@@ -9,12 +9,13 @@ const Briefing = () => {
         @media print {
           @page {
             size: A4;
-            margin: 1cm;
+            margin: 0;
           }
           
           body {
             print-color-adjust: exact;
             -webkit-print-color-adjust: exact;
+            margin: 1cm;
           }
           
           nav {
