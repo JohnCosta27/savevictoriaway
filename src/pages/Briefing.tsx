@@ -95,9 +95,9 @@ const Briefing = () => {
           <h2 className="text-3xl font-bold text-primary mb-8 uppercase">What We Demand</h2>
           
           <div className="mb-8">
-            <h3 className="text-4xl md:text-5xl font-bold text-primary mb-6">Better. Closer. Safer. Parking.</h3>
+            <h3 className="text-4xl md:text-5xl font-bold text-primary mb-6">Alternative. Accessible. Nearby. Parking.</h3>
             <p className="text-xl md:text-2xl text-foreground">
-              The council must provide Enterprise Place residents with a proper parking solution.
+              The council must provide alternative parking in Woking. The town centre carpark is too far away.
             </p>
           </div>
         </div>
