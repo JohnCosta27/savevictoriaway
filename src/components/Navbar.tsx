@@ -15,8 +15,7 @@ export const Navbar = () => {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-2">
             <h1 className="text-lg sm:text-xl font-bold text-primary">
-              <span className="hidden sm:inline">Save Victoria Way Carpark</span>
-              <span className="sm:hidden">Save VW Carpark</span>
+              Save Victoria Way Carpark
             </h1>
           </div>
           
