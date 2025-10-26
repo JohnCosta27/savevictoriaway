@@ -68,7 +68,7 @@ const Briefing = () => {
             Dear Woking Residents
           </p>
           <p className="text-xl md:text-2xl text-foreground mb-4">
-            This vital carpark was closed. Getting to work is now a daily struggle.
+            This vital carpark was closed. Parking in Woking has become chaos.
           </p>
           <p className="text-xl md:text-2xl text-foreground font-semibold">
             No Parking. No Solutions. No Action.
