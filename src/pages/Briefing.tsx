@@ -65,7 +65,7 @@ const Briefing = () => {
             Save Victoria Way Carpark
           </h1>
           <p className="text-3xl md:text-4xl text-foreground font-semibold mb-8">
-            Dear Enterprise Place Residents
+            Dear Woking Residents
           </p>
           <p className="text-xl md:text-2xl text-foreground mb-4">
             Our carpark was closed. We now walk through town to reach our cars.
