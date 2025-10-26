@@ -101,16 +101,16 @@ const Briefing = () => {
         </div>
       </section>
 
-      {/* Simple Solution */}
+      {/* Demand */}
       <section className="py-10 px-6 print-compact">
         <div className="max-w-4xl mx-auto">
           <div className="bg-card p-6 rounded-lg border-4 border-primary print:shadow-none print:border-black text-center">
-            <h3 className="text-3xl font-black text-primary mb-4 print:text-black">THE SOLUTION EXISTS</h3>
-            <p className="text-xl text-foreground font-semibold print:text-black leading-relaxed">
-              The DoubleTree Hilton has underground parking directly beneath Enterprise Place.
+            <h3 className="text-3xl font-black text-primary mb-4 print:text-black">WHAT WE DEMAND</h3>
+            <p className="text-2xl text-foreground font-black mt-4 print:text-black leading-relaxed">
+              Better. Closer. Safer. Parking.
             </p>
-            <p className="text-2xl text-foreground font-black mt-4 print:text-black">
-              Why don't we have access?
+            <p className="text-xl text-foreground font-semibold mt-4 print:text-black">
+              The council must provide Enterprise Place residents with a proper parking solution.
             </p>
           </div>
         </div>
