@@ -27,54 +27,61 @@ const Briefing = () => {
           }
           
           .print-compact {
-            padding: 0.25rem !important;
-            margin-bottom: 0.5rem !important;
+            padding: 0.5rem !important;
+            margin-bottom: 0.75rem !important;
           }
           
           h1 {
-            font-size: 2rem !important;
-            margin-bottom: 0.25rem !important;
+            font-size: 3rem !important;
+            margin-bottom: 0.5rem !important;
           }
           
           h2 {
-            font-size: 1.25rem !important;
+            font-size: 1.75rem !important;
             margin-bottom: 0.5rem !important;
           }
           
           h3 {
+            font-size: 1.25rem !important;
+          }
+          
+          p {
             font-size: 1rem !important;
           }
           
           section {
             page-break-inside: avoid;
-            padding: 0.5rem 0 !important;
+            padding: 1rem 0 !important;
           }
           
           .stat-grid {
-            margin: 0.5rem 0 !important;
+            margin: 1.5rem 0 !important;
           }
         }
       `}</style>
       {/* Header */}
-      <section className="py-6 px-6 print:py-2 print-compact">
+      <section className="py-8 px-6 print:py-4 print-compact">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-6xl md:text-7xl font-black text-primary mb-3 leading-tight print:text-3xl print:text-black">
-            Save Victoria Way Carpark
+          <h1 className="text-6xl md:text-7xl font-black text-primary mb-4 leading-tight print:text-5xl print:text-black">
+            SAVE VICTORIA WAY CARPARK
           </h1>
-          <p className="text-2xl md:text-3xl text-foreground font-semibold mb-2 print:text-base print:text-black">
+          <p className="text-3xl md:text-4xl text-foreground font-bold mb-4 print:text-2xl print:text-black">
             Dear Enterprise Place Residents
           </p>
-          <p className="text-lg text-foreground max-w-3xl mx-auto mt-3 print:text-xs print:text-black">
-            Our carpark was closed, and we now have to walk through the town centre to get to our cars. This is not safe, nor sustainable. Demand action today!
+          <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto mt-4 font-semibold print:text-lg print:text-black">
+            Our carpark was closed. We now walk through town to reach our cars.
+          </p>
+          <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto mt-2 font-bold print:text-lg print:text-black">
+            This is not safe. This is not sustainable.
           </p>
           
-          <div className="mt-6 inline-block">
-            <div className="bg-primary/10 border-2 border-primary rounded-lg px-4 py-3 print:border-black print:bg-white">
-              <p className="text-base font-bold text-primary print:text-black mb-1">
-                Calling on Woking Borough Council
+          <div className="mt-8 inline-block">
+            <div className="bg-primary border-4 border-primary rounded-lg px-6 py-4 print:border-black print:bg-black">
+              <p className="text-2xl font-black text-primary-foreground print:text-white mb-2">
+                WOKING BOROUGH COUNCIL
               </p>
-              <p className="text-sm text-foreground print:text-black">
-                Take action and keep residents informed
+              <p className="text-lg text-primary-foreground print:text-white font-semibold">
+                Take Action. Keep Us Informed.
               </p>
             </div>
           </div>
@@ -82,9 +89,10 @@ const Briefing = () => {
       </section>
 
       {/* Impact Stats */}
-      <section className="py-6 px-6 bg-muted print:bg-white print-compact stat-grid">
+      <section className="py-10 px-6 bg-muted print:bg-white print-compact stat-grid">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-4 gap-2 print:gap-2">
+          <h2 className="text-3xl font-black text-primary text-center mb-6 print:text-black">THE IMPACT</h2>
+          <div className="grid grid-cols-4 gap-4 print:gap-3">
             <StatCard icon={Home} number="120+" label="Households" />
             <StatCard icon={Users} number="300+" label="Residents" />
             <StatCard icon={Car} number="0" label="Parking" />
@@ -93,67 +101,31 @@ const Briefing = () => {
         </div>
       </section>
 
-      {/* The Situation */}
-      <section className="py-6 px-6 print-compact">
+      {/* Simple Solution */}
+      <section className="py-10 px-6 print-compact">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-card p-3 rounded-lg border-l-4 border-primary mb-3 print:shadow-none print:border-black">
-            <h3 className="text-lg font-semibold text-primary mb-2 print:text-black">What We Need:</h3>
-            <ul className="space-y-1 text-foreground text-sm print:text-black">
-              <li className="flex items-start">
-                <span className="text-primary font-bold mr-2 print:text-black">•</span>
-                <span><strong>Regular updates</strong> on safety surveys and plans</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary font-bold mr-2 print:text-black">•</span>
-                <span><strong>Parking solutions</strong> for residents</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary font-bold mr-2 print:text-black">•</span>
-                <span><strong>Recognition</strong> of safety concerns</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Solutions */}
-      <section className="py-6 px-6 bg-muted print:bg-white print-compact">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-card p-3 rounded-lg border border-border print:shadow-none print:border-black">
-            <h3 className="text-lg font-semibold text-primary mb-2 print:text-black">Long-Term Solutions:</h3>
-            <ul className="space-y-1 text-foreground text-sm print:text-black">
-              <li className="flex items-start">
-                <span className="text-primary font-bold mr-2 print:text-black">1.</span>
-                <span>Access to DoubleTree Hilton underground car park (beneath Enterprise Place)</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary font-bold mr-2 print:text-black">2.</span>
-                <span>Repair and reopen Victoria Way Carpark</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary font-bold mr-2 print:text-black">3.</span>
-                <span>Build new multi-storey parking facility</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary font-bold mr-2 print:text-black">4.</span>
-                <span>Dedicated resident parking zones</span>
-              </li>
-            </ul>
+          <div className="bg-card p-6 rounded-lg border-4 border-primary print:shadow-none print:border-black text-center">
+            <h3 className="text-3xl font-black text-primary mb-4 print:text-black">THE SOLUTION EXISTS</h3>
+            <p className="text-xl text-foreground font-semibold print:text-black leading-relaxed">
+              The DoubleTree Hilton has underground parking directly beneath Enterprise Place.
+            </p>
+            <p className="text-2xl text-foreground font-black mt-4 print:text-black">
+              Why don't we have access?
+            </p>
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-6 px-6 print-compact">
+      <section className="py-10 px-6 print-compact">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-primary/10 border-2 border-primary p-3 rounded-lg print:shadow-none print:border-black">
-            <h2 className="text-2xl font-bold text-primary mb-2 print:text-black">Make Your Voice Heard</h2>
-            <p className="text-base text-foreground mb-3 print:text-black">
-              Join your fellow Enterprise Place residents
+          <div className="bg-primary/20 border-4 border-primary p-6 rounded-lg print:shadow-none print:border-black">
+            <h2 className="text-4xl font-black text-primary mb-4 print:text-black">DEMAND ACTION</h2>
+            <p className="text-2xl text-foreground mb-6 font-bold print:text-black">
+              Sign the Petition
             </p>
-            <div className="bg-card p-2 rounded-lg inline-block print:shadow-none print:border print:border-black">
-              <p className="text-xs text-foreground mb-1 print:text-black">Sign the petition:</p>
-              <p className="text-xl font-bold text-primary print:text-black">savevictoriaway.com</p>
+            <div className="bg-card p-4 rounded-lg inline-block print:shadow-none print:border-2 print:border-black">
+              <p className="text-3xl font-black text-primary print:text-black">savevictoriaway.com</p>
             </div>
           </div>
         </div>
