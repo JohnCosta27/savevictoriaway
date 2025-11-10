@@ -1,16 +1,16 @@
-import { z } from 'zod';
-import dotenv from 'dotenv';
+import { z } from "zod";
+import dotenv from "dotenv";
 
-dotenv.config();
+dotenv.config({ quiet: true });
 
 const envSchema = z.object({
-    PORT: z
-        .string()
-        .refine(
-            (port) => parseInt(port) > 0 && parseInt(port) < 65536,
-            "Invalid port number"
-        ),
-    DATABASE_URL: z.string().min(10)
+	PORT: z
+		.string()
+		.refine(
+			(port) => parseInt(port) > 0 && parseInt(port) < 65536,
+			"Invalid port number",
+		),
+	DATABASE_URL: z.string().min(10),
 });
 
 type Env = z.infer<typeof envSchema>;

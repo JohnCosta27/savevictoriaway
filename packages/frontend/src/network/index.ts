@@ -1,15 +1,18 @@
 import { z } from "zod";
-import { signedPetitionSchema, signPetitionSchema } from 'types';
+import { signedPetitionSchema, signPetitionSchema } from "types";
 
-const baseURL = import.meta.env.BASE_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
-export const signSignature = async (signature: z.infer<typeof signPetitionSchema>): Promise<z.infer<typeof signedPetitionSchema>> => {
-    const res = await fetch(baseURL, {
-        method: 'POST', body: JSON.stringify(signature),
-    })
+export const signPetition = async (
+	signature: z.infer<typeof signPetitionSchema>,
+): Promise<z.infer<typeof signedPetitionSchema>> => {
+	const res = await fetch(`${backendUrl}/sign-petition`, {
+		method: "POST",
+		body: JSON.stringify(signature),
+	});
 
-    const body = await res.json();
-    const validatedBody = signedPetitionSchema.parse(body);
+	const body = await res.json();
+	const validatedBody = signedPetitionSchema.parse(body);
 
-    return validatedBody
-}
+	return validatedBody;
+};
