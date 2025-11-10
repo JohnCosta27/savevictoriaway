@@ -1,11 +1,6 @@
-import { z } from "zod"
+import type z from "zod";
 import { insertSignature } from "../models";
-
-const signPetitionSchema = z.object({
-    email: z.string(),
-    name: z.string().trim().min(1).max(30).optional(),
-    comment: z.string().trim().min(10).max(10_000).optional(),
-})
+import { signedPetitionSchema, signPetitionSchema } from 'types'
 
 export const signPetition = async (req: Request): Promise<Response> => {
     const body = await req.json()
@@ -15,15 +10,17 @@ export const signPetition = async (req: Request): Promise<Response> => {
         return Response.json({ error: validatedBody.error }, { status: 400 });
     }
 
-    const insertedSignature = await insertSignature({
+    const _insertedSignature = await insertSignature({
         email: validatedBody.data.email,
         name: validatedBody.data.name,
         comment: validatedBody.data.comment,
     })
 
-    if (!insertedSignature) {
+    if (!_insertedSignature) {
         return Response.json({ error: "inserting signature in database" }, { status: 500 });
     }
+
+    const insertedSignature = _insertedSignature satisfies z.infer<typeof signedPetitionSchema>
 
     return Response.json(insertedSignature, { status: 200 });
 }
