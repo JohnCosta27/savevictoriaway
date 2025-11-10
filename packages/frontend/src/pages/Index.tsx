@@ -11,7 +11,7 @@ import emptyBuildingParking from "@/assets/empty-building-parking.jpg";
 import asahiBuilding from "@/assets/asahi-building.jpg";
 import doubletreeHilton from "@/assets/doubletree-hilton.jpg";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { usePetitions } from "@/state";
 
 const STATIC_TESTEMONIES = [
 	{
@@ -36,7 +36,8 @@ const STATIC_TESTEMONIES = [
 
 const Index = () => {
 	const navigate = useNavigate();
-	const [signatureCount, setSignatureCount] = useState(0);
+
+	const { signatures } = usePetitions();
 
 	const scrollToPetition = () => {
 		document.getElementById("petition")?.scrollIntoView({ behavior: "smooth" });
@@ -67,12 +68,13 @@ const Index = () => {
 								Sign the Petition
 							</h2>
 							<p className="text-lg text-muted-foreground">
-								{signatureCount > 0 && (
+								{signatures.length > 0 && (
 									<span className="font-semibold text-accent">
-										{signatureCount} people
+										{signatures.length} people
 									</span>
 								)}
-								{signatureCount > 0 ? " have" : "Be the first to"} signed so far
+								{signatures.length > 0 ? " have" : "Be the first to"} signed so
+								far
 							</p>
 						</div>
 						<PetitionForm compact />
@@ -438,7 +440,8 @@ const Index = () => {
 							className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
 						>
 							<MessageSquare className="w-5 h-5" />
-							Read All {signatureCount > 0 && `${signatureCount} `}Testimonies
+							Read All {signatures.length > 0 && `${signatures.length} `}
+							Testimonies
 						</Button>
 					</div>
 				</div>

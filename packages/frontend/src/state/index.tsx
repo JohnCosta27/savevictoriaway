@@ -1,17 +1,22 @@
-import { signPetition } from "@/network";
+import {
+	getSignatures,
+	signedPetitionWithParsedDate,
+	signPetition,
+} from "@/network";
 import {
 	createContext,
 	ReactNode,
 	useCallback,
 	useContext,
+	useEffect,
 	useState,
 } from "react";
 import { toast } from "sonner";
-import { signedPetitionSchema, signPetitionSchema } from "types";
+import { signPetitionSchema } from "types";
 import { z } from "zod";
 
 // submitted is used to determine if the signature was inserted correctly
-type SignatureWithState = z.infer<typeof signedPetitionSchema> & {
+type SignatureWithState = z.infer<typeof signedPetitionWithParsedDate> & {
 	submitted: boolean;
 };
 
@@ -36,6 +41,12 @@ export const PetitionStateProvider = ({
 		[],
 	);
 
+	useEffect(() => {
+		getSignatures().then((signatures) => {
+			setSignatures(signatures.map((s) => ({ ...s, submitted: true })));
+		});
+	}, []);
+
 	const onSignPetition = useCallback<PetitionStateType["onSignPetition"]>(
 		async (signature) => {
 			const eagerPetitionId = Date.now().toString();
@@ -43,7 +54,7 @@ export const PetitionStateProvider = ({
 			setSignatures((petitions) => [
 				{
 					id: eagerPetitionId,
-					createdAt: new Date().toISOString(),
+					createdAt: new Date(),
 					submitted: false,
 					...signature,
 				},
@@ -68,10 +79,6 @@ export const PetitionStateProvider = ({
 
 					return [...petitions];
 				});
-
-				toast.error(
-					"Sorry, had a problem inserting your signature. Please try again.",
-				);
 			} catch (err) {
 				console.warn(err);
 

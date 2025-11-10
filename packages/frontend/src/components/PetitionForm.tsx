@@ -34,12 +34,22 @@ export const PetitionForm = ({ compact = false }: PetitionFormProps) => {
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 
+		if (isSubmitting) {
+			return;
+		}
+
 		setIsSubmitting(true);
+
 		await onSignPetition({
 			email,
 			comment,
 			name,
 		});
+
+		setName(undefined);
+		setEmail(undefined);
+		setComment(undefined);
+
 		setIsSubmitting(false);
 	};
 

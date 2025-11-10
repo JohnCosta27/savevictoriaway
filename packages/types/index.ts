@@ -10,3 +10,5 @@ export const signedPetitionSchema = signPetitionSchema.extend({
 	id: z.uuid(),
 	createdAt: z.date().transform((date: Date) => date.toISOString()),
 });
+
+export const signedPetitionArraySchema = z.array(signedPetitionSchema);

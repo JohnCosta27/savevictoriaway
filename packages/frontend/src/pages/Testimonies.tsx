@@ -1,20 +1,16 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { useNavigate } from "react-router-dom";
 import { formatDistanceToNow } from "date-fns";
 import { ArrowLeft, Users } from "lucide-react";
-
-interface Signature {
-	id: string;
-	name: string;
-	comment: string | null;
-	created_at: string;
-}
+import { usePetitions } from "@/state";
 
 const Testimonies = () => {
-	const [signatures, setSignatures] = useState<Signature[]>([]);
-	const [totalCount, setTotalCount] = useState(0);
+	const { signatures } = usePetitions();
+	console.log(signatures);
+
+	const totalCount = signatures.length;
+
 	const navigate = useNavigate();
 
 	return (
@@ -55,7 +51,7 @@ const Testimonies = () => {
 							key={signature.id}
 							name={signature.name}
 							comment={signature.comment || ""}
-							date={formatDistanceToNow(new Date(signature.created_at), {
+							date={formatDistanceToNow(new Date(signature.createdAt), {
 								addSuffix: true,
 							})}
 						/>

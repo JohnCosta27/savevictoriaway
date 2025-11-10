@@ -1,4 +1,5 @@
 import { ENV } from "./env";
+import { getPetitions } from "./routes/get-petitions";
 import { signPetition } from "./routes/sign-petition";
 
 const CORS_HEADERS = {
@@ -29,7 +30,8 @@ const server = Bun.serve({
 	port: ENV.PORT,
 	routes: {
 		"/health": new Response("alive!"),
-		"/sign-petition": {
+		"/sign": {
+			GET: withCors(getPetitions),
 			POST: withCors(signPetition),
 			OPTIONS: allowCors,
 		},
