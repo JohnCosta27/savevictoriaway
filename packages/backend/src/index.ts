@@ -1,9 +1,10 @@
 import { ENV } from "./env";
 import { getPetitions } from "./routes/get-petitions";
 import { signPetition } from "./routes/sign-petition";
+import { styleText } from "node:util";
 
 const CORS_HEADERS = {
-	"Access-Control-Allow-Origin": "*",
+	"Access-Control-Allow-Origin": ENV.FRONTEND_URL,
 	"Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
 	"Access-Control-Allow-Headers": "Content-Type, Authorization",
 };
@@ -26,14 +27,44 @@ const withCors = (fn: Handler): Handler => {
 	};
 };
 
+const getColors = (status: number): Parameters<typeof styleText>[0] => {
+	if (status >= 200 && status < 300) {
+		return ["bgGreen", "white"];
+	} else if (status >= 300 && status < 400) {
+		return ["bgYellow", "white"];
+	} else if (status >= 400 && status < 500) {
+		return ["bgRed", "white"];
+	} else if (status >= 500) {
+		return ["bgRedBright", "white"];
+	} else {
+		return ["bgBlack", "white"];
+	}
+};
+
+const withLogger = (fn: Handler): Handler => {
+	return async (req) => {
+		const res = await fn(req);
+
+		const code = res.status;
+
+		const styles = getColors(code);
+		const codeText = styleText(styles, `${code}`);
+
+		const msg = `${codeText}: ${req.method} ${req.url}`;
+		console.log(msg);
+
+		return res;
+	};
+};
+
 const server = Bun.serve({
 	port: ENV.PORT,
 	routes: {
 		"/health": new Response("alive!"),
 		"/sign": {
-			GET: withCors(getPetitions),
-			POST: withCors(signPetition),
-			OPTIONS: allowCors,
+			GET: withLogger(withCors(getPetitions)),
+			POST: withLogger(withCors(signPetition)),
+			OPTIONS: withLogger(allowCors),
 		},
 	},
 });
