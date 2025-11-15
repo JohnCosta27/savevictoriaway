@@ -14,6 +14,7 @@ const allowCors = async (_: Request): Promise<Response> => {
 };
 
 type Handler = (req: Request) => Promise<Response>;
+type Middleware = (fn: Handler) => Handler;
 
 const withCors = (fn: Handler): Handler => {
 	return async (req) => {
@@ -57,14 +58,26 @@ const withLogger = (fn: Handler): Handler => {
 	};
 };
 
+const withFrontendReferrer: Middleware = (fn) => {
+	return async (req) => {
+		const referrer = req.headers.get("referrer");
+
+		if (referrer !== ENV.FRONTEND_URL) {
+			return new Response(undefined, { status: 403 });
+		}
+
+		return fn(req);
+	};
+};
+
 const server = Bun.serve({
 	port: ENV.PORT,
 	routes: {
 		"/health": new Response("alive!"),
 		"/sign": {
-			GET: withLogger(withCors(getPetitions)),
-			POST: withLogger(withCors(signPetition)),
-			OPTIONS: withLogger(allowCors),
+			GET: withFrontendReferrer(withLogger(withCors(getPetitions))),
+			POST: withFrontendReferrer(withLogger(withCors(signPetition))),
+			OPTIONS: withFrontendReferrer(withLogger(allowCors)),
 		},
 	},
 });

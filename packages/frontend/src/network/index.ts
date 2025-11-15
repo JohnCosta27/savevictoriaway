@@ -12,7 +12,7 @@ const signedPetitionSignatures = z.array(signedPetitionWithParsedDate);
 export const getSignatures = async (): Promise<
 	z.infer<typeof signedPetitionSignatures>
 > => {
-	const res = await fetch(`${backendUrl}/sign`);
+	const res = await fetch(`${backendUrl}/sign`, { referrer: location.origin });
 
 	const body = await res.json();
 	const validatedBody = signedPetitionSignatures.parse(body);
