@@ -7,7 +7,6 @@ import { usePetitions } from "@/state";
 
 const Testimonies = () => {
 	const { signatures } = usePetitions();
-	console.log(signatures);
 
 	const totalCount = signatures.length;
 
