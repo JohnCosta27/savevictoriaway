@@ -7,9 +7,12 @@ import { usePetitions } from "@/state";
 
 const Testimonies = () => {
 	const { signatures: allSignatures } = usePetitions();
-	const signatures = allSignatures.filter(
-		(s) => s.name == null || s.comment == null,
-	);
+	const signatures = allSignatures
+		.filter((s) => s.comment != null)
+		.map((s) => ({
+			...s,
+			name: s.name ?? "Anonymous",
+		}));
 
 	const totalCount = signatures.length;
 
