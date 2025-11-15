@@ -83,7 +83,7 @@ export const PetitionStateProvider = ({
 				console.warn(err);
 
 				setSignatures((petitions) =>
-					petitions.filter((p) => p.id === eagerPetitionId),
+					petitions.filter((p) => p.id !== eagerPetitionId),
 				);
 
 				toast.error(

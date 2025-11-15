@@ -5,50 +5,49 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { usePetitions } from "@/state";
+import { useToast } from "@/hooks/use-toast";
 
 interface PetitionFormProps {
 	compact?: boolean;
 }
 
-const setUndefinedOrValue = (
-	setter: (value: string | undefined) => void,
-	value: string,
-) => {
-	if (value.length === 0) {
-		setter(undefined);
-	} else {
-		setter(value);
-	}
-};
-
 export const PetitionForm = ({ compact = false }: PetitionFormProps) => {
-	const [name, setName] = useState<string | undefined>();
-	const [comment, setComment] = useState<string | undefined>();
-	const [email, setEmail] = useState<string | undefined>();
-
+	const [email, setEmail] = useState<string>("");
+	const [name, setName] = useState<string>("");
+	const [comment, setComment] = useState<string>("");
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [isAnonymous, setIsAnonymous] = useState(false);
 
 	const { onSignPetition } = usePetitions();
+	const { toast } = useToast();
 
-	const handleSubmit = async (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
 		if (isSubmitting) {
 			return;
 		}
 
+		const optionalName = name.trim().length > 0 ? name.trim() : undefined;
+		const optionalComment =
+			comment.trim().length > 0 ? comment.trim() : undefined;
+
 		setIsSubmitting(true);
 
 		await onSignPetition({
-			email,
-			comment,
-			name,
+			email: email.trim(),
+			name: optionalName,
+			comment: optionalComment,
 		});
 
-		setName(undefined);
-		setEmail(undefined);
-		setComment(undefined);
+		toast({
+			title: "Success!",
+			description: "Thank you for signing the petition.",
+		});
+
+		setName("");
+		setEmail("");
+		setComment("");
 
 		setIsSubmitting(false);
 	};
@@ -76,9 +75,11 @@ export const PetitionForm = ({ compact = false }: PetitionFormProps) => {
 				<div>
 					<Input
 						placeholder="Your Name"
-						value={name ?? ""}
-						onChange={(e) => setUndefinedOrValue(setName, e.target.value)}
+						value={name}
+						onChange={(e) => setName(e.target.value)}
 						required
+						minLength={1}
+						maxLength={30}
 						className="bg-background border-border"
 					/>
 				</div>
@@ -89,7 +90,7 @@ export const PetitionForm = ({ compact = false }: PetitionFormProps) => {
 					type="email"
 					placeholder="Your Email"
 					value={email}
-					onChange={(e) => setUndefinedOrValue(setEmail, e.target.value)}
+					onChange={(e) => setEmail(e.target.value)}
 					required
 					className="bg-background border-border"
 				/>
@@ -98,8 +99,10 @@ export const PetitionForm = ({ compact = false }: PetitionFormProps) => {
 			<div>
 				<Textarea
 					placeholder="Why is Victoria Way Carpark important to you? (Optional)"
-					value={comment ?? ""}
-					onChange={(e) => setUndefinedOrValue(setComment, e.target.value)}
+					value={comment}
+					onChange={(e) => setComment(e.target.value)}
+					minLength={5}
+					maxLength={10000}
 					className="bg-background border-border min-h-24"
 				/>
 			</div>
