@@ -1,5 +1,6 @@
 import { db } from "./database";
 import { signaturesTable } from "./schema";
+import { desc } from "drizzle-orm";
 
 export const insertSignature = async (
 	signature: typeof signaturesTable.$inferInsert,
@@ -15,5 +16,8 @@ export const insertSignature = async (
 export const getSignatures = async (): Promise<
 	Array<typeof signaturesTable.$inferSelect>
 > => {
-	return db.select().from(signaturesTable);
+	return db
+		.select()
+		.from(signaturesTable)
+		.orderBy(desc(signaturesTable.createdAt));
 };

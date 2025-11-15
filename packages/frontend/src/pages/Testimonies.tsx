@@ -6,7 +6,10 @@ import { ArrowLeft, Users } from "lucide-react";
 import { usePetitions } from "@/state";
 
 const Testimonies = () => {
-	const { signatures } = usePetitions();
+	const { signatures: allSignatures } = usePetitions();
+	const signatures = allSignatures.filter(
+		(s) => s.name == null || s.comment == null,
+	);
 
 	const totalCount = signatures.length;
 
