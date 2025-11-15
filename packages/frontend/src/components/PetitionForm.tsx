@@ -54,6 +54,7 @@ export const PetitionForm = ({ compact = false }: PetitionFormProps) => {
 
 	return (
 		<form
+			data-testid="petition-form"
 			onSubmit={handleSubmit}
 			className={`space-y-4 ${compact ? "max-w-md" : "max-w-xl"} mx-auto`}
 		>
