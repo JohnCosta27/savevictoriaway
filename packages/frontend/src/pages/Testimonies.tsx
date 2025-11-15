@@ -14,7 +14,7 @@ const Testimonies = () => {
 			name: s.name ?? "Anonymous",
 		}));
 
-	const totalCount = signatures.length;
+	const totalCount = allSignatures.length;
 
 	const navigate = useNavigate();
 
